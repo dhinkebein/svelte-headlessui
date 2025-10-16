@@ -42,7 +42,7 @@ const components = [
 ] as const;
 
 export type SupportedElement = typeof components[number];
-export type SupportedAs = SupportedElement | typeof SvelteComponent;
+export type SupportedAs = SupportedElement | typeof SvelteComponent<any>;
 
 export function isValidElement(element: SupportedAs) {
   return !(typeof element === "string" && !components.includes(element));
